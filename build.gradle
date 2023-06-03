@@ -1,0 +1,30 @@
+repositories {
+    mavenCentral()
+    maven {
+        name 'Curios maven'
+        url = "https://maven.theillusivec4.top/"
+    }\
+    maven { url = 'https://maven.blamejared.com/' }
+    maven {
+        name = "Curse Maven"
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+
+}
+
+dependencies {
+
+    // Curios dependency
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${minecraftVersion}-${curiosVersion}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${minecraftVersion}-${curiosVersion}")
+
+    implementation fg.deobf("team.lodestar.lodestone:lodestone:${minecraftVersion}-${project.lodestoneVersion}")
+
+
+    // CurseMaven Deps
+    compileOnly fg.deobf("curse.maven:farmers_delight-398521:3739914")
+
+}
